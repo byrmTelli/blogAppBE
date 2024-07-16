@@ -1,0 +1,17 @@
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/bin/Debug/net8.0/blogAppBE.SERVICE.deps.json
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/bin/Debug/net8.0/blogAppBE.SERVICE.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/bin/Debug/net8.0/blogAppBE.SERVICE.pdb
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/bin/Debug/net8.0/blogAppBE.CORE.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/bin/Debug/net8.0/blogAppBE.DAL.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/bin/Debug/net8.0/blogAppBE.DAL.pdb
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/bin/Debug/net8.0/blogAppBE.CORE.pdb
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.csproj.AssemblyReference.cache
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.AssemblyInfoInputs.cache
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.AssemblyInfo.cs
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.csproj.CoreCompileInputs.cache
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppB.D275D512.Up2Date
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/refint/blogAppBE.SERVICE.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.pdb
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/ref/blogAppBE.SERVICE.dll

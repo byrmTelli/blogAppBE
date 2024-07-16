@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/blogAppBE.WEB.props" />
+</Project>
