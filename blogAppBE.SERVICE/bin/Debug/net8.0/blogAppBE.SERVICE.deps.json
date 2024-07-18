@@ -175,6 +175,9 @@
         }
       },
       "blogAppBE.CORE/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.0"
+        },
         "runtime": {
           "blogAppBE.CORE.dll": {}
         }

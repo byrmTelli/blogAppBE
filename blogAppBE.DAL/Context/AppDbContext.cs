@@ -10,7 +10,7 @@ namespace blogAppBE.DAL.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Your_DB_ConnectionString");
+            optionsBuilder.UseNpgsql("Your_Db_ConnectionString");
         }
 
         #region DbSets

@@ -10,6 +10,7 @@ namespace blogAppBE.CORE.Enums
         PaymentRequired = 402,
         Forbidden = 403,
         NotFound = 404,
+        Conflict = 409,
         InternalServerError = 500
     }
 }

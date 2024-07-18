@@ -15,3 +15,4 @@
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.DAL/obj/Debug/net8.0/ref/blogAppBE.DAL.dll
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.DAL/bin/Debug/net8.0/blogAppBE.DAL.runtimeconfig.json
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.DAL/obj/Debug/net8.0/blogAppBE.DAL.genruntimeconfig.cache
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.DAL/obj/Debug/net8.0/blogAppBE.DAL.sourcelink.json

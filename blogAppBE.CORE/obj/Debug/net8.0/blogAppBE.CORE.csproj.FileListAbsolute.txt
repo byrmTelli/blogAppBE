@@ -9,3 +9,5 @@
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.CORE/obj/Debug/net8.0/refint/blogAppBE.CORE.dll
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.CORE/obj/Debug/net8.0/blogAppBE.CORE.pdb
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.CORE/obj/Debug/net8.0/ref/blogAppBE.CORE.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.CORE/obj/Debug/net8.0/blogAppBE.CORE.csproj.AssemblyReference.cache
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.CORE/obj/Debug/net8.0/blogAppBE.CORE.sourcelink.json

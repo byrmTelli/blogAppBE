@@ -15,3 +15,4 @@
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/refint/blogAppBE.SERVICE.dll
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.pdb
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/ref/blogAppBE.SERVICE.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.SERVICE/obj/Debug/net8.0/blogAppBE.SERVICE.sourcelink.json

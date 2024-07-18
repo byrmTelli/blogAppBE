@@ -21,6 +21,12 @@ namespace blogAppBE.CORE.Generics
         {
             return new Response<T>{Data = data, StatusCode = statusCode, IsSuccessfull = true};
         }
+
+        public static Response<T> Fail(string errorMessage,StatusCode statusCode)
+        {
+            var errorViewModel = new ErrorViewModel(errorMessage);
+            return new Response<T>{Errors = errorViewModel, StatusCode = statusCode,IsSuccessfull = false};
+        }
     }
 
 }
