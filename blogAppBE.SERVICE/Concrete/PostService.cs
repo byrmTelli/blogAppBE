@@ -1,6 +1,7 @@
 using blogAppBE.CORE.Generics;
 using blogAppBE.CORE.RequestModels.Post;
 using blogAppBE.CORE.ViewModels;
+using blogAppBE.CORE.ViewModels.PostViewModels;
 using blogAppBE.DAL.Abstract;
 using blogAppBE.SERVICE.Abstract;
 
@@ -19,5 +20,23 @@ namespace blogAppBE.SERVICE.Concrete
             var result = await _postDal.CreatePost(request);
             return result;
         }
+        public async Task<Response<List<PostViewModel>>> GetActivePosts()
+        {
+            var result = await _postDal.GetPublishedPostList();
+            return result;
+        }
+
+        public async Task<Response<NoDataViewModel>> UpdatePost(PostUpdateRequestModel request)
+        {
+            var result = await _postDal.UpdatePost(request);
+            return result;
+        }
+
+        public async Task<Response<NoDataViewModel>> DeletePost(int id)
+        {
+            var result = await _postDal.DeletePost(id);
+            return result;
+        }
+
     }
 }

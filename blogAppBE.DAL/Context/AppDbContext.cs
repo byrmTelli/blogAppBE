@@ -10,7 +10,7 @@ namespace blogAppBE.DAL.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Your_Db_ConnectionString");
+            optionsBuilder.UseNpgsql("UserID=postgres;Password=123456Bayro.;Host=localhost;Port=5432;Database=personalBlogDB;");
         }
 
         #region DbSets

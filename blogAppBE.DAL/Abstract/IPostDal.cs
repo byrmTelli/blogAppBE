@@ -10,7 +10,9 @@ namespace blogAppBE.DAL.Abstract
     public interface IPostDal:IEntityRepository<Post>
     {
         Task<Response<NoDataViewModel>> CreatePost(PostRequestModel request);
-        Task<List<PostViewModel>> GetActivePostList();
+        Task<Response<List<PostViewModel>>> GetPublishedPostList();
+        Task<Response<NoDataViewModel>> DeletePost(int id);
+        Task<Response<NoDataViewModel>> UpdatePost(PostUpdateRequestModel request);
         Task<List<PostViewModel>> GetAllPosts();
         Task<List<PostViewModel>> GetActivePostsByCategoryName(string categoryName);
     }
