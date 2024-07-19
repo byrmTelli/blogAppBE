@@ -4,6 +4,7 @@ using blogAppBE.CORE.ViewModels;
 using blogAppBE.CORE.ViewModels.PostViewModels;
 using blogAppBE.DAL.Abstract;
 using blogAppBE.SERVICE.Abstract;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace blogAppBE.SERVICE.Concrete
 {
@@ -35,6 +36,12 @@ namespace blogAppBE.SERVICE.Concrete
         public async Task<Response<NoDataViewModel>> DeletePost(int id)
         {
             var result = await _postDal.DeletePost(id);
+            return result;
+        }
+
+        public async Task<Response<List<PostViewModel>>> GetAllPosts()
+        {
+            var result = await _postDal.GetAllPosts();
             return result;
         }
 

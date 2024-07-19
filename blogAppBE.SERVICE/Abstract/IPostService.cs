@@ -11,6 +11,7 @@ namespace blogAppBE.SERVICE.Abstract
         Task<Response<List<PostViewModel>>> GetActivePosts();
         Task<Response<NoDataViewModel>> UpdatePost(PostUpdateRequestModel request);
         Task<Response<NoDataViewModel>> DeletePost(int id);
+        Task<Response<List<PostViewModel>>> GetAllPosts();
         
     }
 }

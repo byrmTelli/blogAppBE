@@ -64,5 +64,17 @@ namespace blogAppBE.WEB.Controllers
 
             return StatusCode((int)response.StatusCode, response.Errors);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllPosts()
+        {
+            var response = await _postService.GetAllPosts();
+            if(response.IsSuccessfull)
+            {
+                return StatusCode((int)response.StatusCode,response.Data);
+            }
+
+            return StatusCode((int)response.StatusCode,response.Errors);
+        }
     }
 }
