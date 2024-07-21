@@ -28,7 +28,6 @@ namespace blogAppBE.WEB.Controllers
 
             return StatusCode((int)response.StatusCode,response.Errors);
         }
-
         [HttpGet]
         public async Task<IActionResult> GetPublishedPostList()
         {
@@ -40,7 +39,6 @@ namespace blogAppBE.WEB.Controllers
 
             return StatusCode((int)response.StatusCode, response.Errors);
         }
-
         [HttpPut]
         public async Task<IActionResult> UpdatePost([FromBody]PostUpdateRequestModel request)
         {

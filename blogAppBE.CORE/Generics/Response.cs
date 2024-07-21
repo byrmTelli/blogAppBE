@@ -27,6 +27,15 @@ namespace blogAppBE.CORE.Generics
             var errorViewModel = new ErrorViewModel(errorMessage);
             return new Response<T>{Errors = errorViewModel, StatusCode = statusCode,IsSuccessfull = false};
         }
+
+        public static Response<T> Fail(List<string> errorMessages,StatusCode statusCode)
+        {
+            var _errors = new ErrorViewModel
+            {
+                Errors = errorMessages
+            };
+            return new Response<T> { Errors = _errors, StatusCode = statusCode };
+        }
     }
 
 }

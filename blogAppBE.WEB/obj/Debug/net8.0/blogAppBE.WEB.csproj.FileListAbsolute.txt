@@ -110,3 +110,12 @@
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/obj/Debug/net8.0/blogAppBE.WEB.sourcelink.json
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/bayramtelli/Desktop/aspNetCore/blogAppBE/blogAppBE.WEB/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

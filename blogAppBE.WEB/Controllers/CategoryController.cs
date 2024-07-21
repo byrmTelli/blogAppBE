@@ -3,6 +3,7 @@ using blogAppBE.CORE.RequestModels;
 using blogAppBE.CORE.ViewModels;
 using blogAppBE.CORE.ViewModels.CategoryViewModels;
 using blogAppBE.SERVICE.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace blogAppBE.WEB.Controllers
@@ -44,6 +45,7 @@ namespace blogAppBE.WEB.Controllers
             return StatusCode((int)response.StatusCode,response.Errors);
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetCategoryList()
         {

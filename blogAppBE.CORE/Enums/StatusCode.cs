@@ -5,6 +5,7 @@ namespace blogAppBE.CORE.Enums
         OK = 200,
         Created = 201,
         Accepted = 202,
+        Updated = 204,
         BadRequest = 400,
         UnAuthorized = 401,
         PaymentRequired = 402,
