@@ -1,3 +1,4 @@
+using blogAppBE.CORE.RequestModels.Token;
 using blogAppBE.CORE.ViewModels.AuthenticationViewModels;
 using blogAppBE.SERVICE.Abstract;
 using Microsoft.AspNetCore.Mvc;
@@ -15,14 +16,25 @@ namespace blogAppBE.WEB.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateToken([FromBody]LoginRequestModel request)
+        public async Task<IActionResult> Login([FromBody]LoginRequestModel request)
         {
             var response = await _authService.CreateTokenAsync(request);
             if(response.IsSuccessfull)
             {
                 return StatusCode((int)response.StatusCode,response.Data);
             }
-            return StatusCode((int)response.StatusCode);
+            return StatusCode((int)response.StatusCode,response.Errors);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateTokenByRefreshToken(CreateTokenByRefreshTokenRequestModel request)
+        {
+            var response = await _authService.CreateTokenByRefreshToken(request);
+            if (response.IsSuccessfull)
+            {
+                return StatusCode((int)response.StatusCode, response.Data);
+            }
+            return StatusCode((int)response.StatusCode, response.Errors);
         }
     }
 }

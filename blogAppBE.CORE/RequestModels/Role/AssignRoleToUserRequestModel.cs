@@ -2,7 +2,7 @@ namespace blogAppBE.CORE.RequestModels.Role
 {
     public class AssignRoleToUserRequestModel
     {
-        public int UserId { get; set; }
-        public int RoleId { get; set; }
+        public string UserId { get; set; }
+        public string RoleId { get; set; }
     }
 }

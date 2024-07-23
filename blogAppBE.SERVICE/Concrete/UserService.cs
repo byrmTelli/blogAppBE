@@ -20,9 +20,9 @@ namespace blogAppBE.SERVICE.Concrete
             return result;
         }
 
-        public async Task<Response<AppUserViewModel>> UpdateUser(AppUserUpdateRequestModel request)
+        public async Task<Response<AppUserViewModel>> UpdateUser(string userId,AppUserUpdateRequestModel request)
         {
-            var result = await _userDal.UpdateUser(request);
+            var result = await _userDal.UpdateUser(userId,request);
             return result;
         }
     }

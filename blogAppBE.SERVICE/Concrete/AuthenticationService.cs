@@ -6,6 +6,7 @@ using blogAppBE.CORE.Enums;
 using Microsoft.AspNetCore.Identity;
 using blogAppBE.CORE.DBModels;
 using blogAppBE.DAL.Abstract;
+using blogAppBE.CORE.RequestModels.Token;
 
 namespace blogAppBE.SERVICE.Concrete
 {
@@ -19,7 +20,6 @@ namespace blogAppBE.SERVICE.Concrete
             _userManager = userManager;
             _tokenDal = tokenDal;
         }
-
         public async Task<Response<TokenVeiwModel>> CreateTokenAsync(LoginRequestModel request)
         {
             if(request == null)
@@ -31,14 +31,14 @@ namespace blogAppBE.SERVICE.Concrete
 
             if(user == null)
             {
-                return Response<TokenVeiwModel>.Fail("Email or password is wrong.", StatusCode.BadRequest);
+                return Response<TokenVeiwModel>.Fail("Email or password is wrong.", StatusCode.UnAuthorized);
             }
 
             var checkPassword = await _userManager.CheckPasswordAsync(user,request.Password);
 
             if(!checkPassword)
             {
-                return Response<TokenVeiwModel>.Fail("Email or password is wrong.", StatusCode.BadRequest);
+                return Response<TokenVeiwModel>.Fail("Email or password is wrong.", StatusCode.UnAuthorized);
             }
 
             var newToken = await _tokenDal.CreateToken(user.Email);
@@ -58,15 +58,10 @@ namespace blogAppBE.SERVICE.Concrete
 
             return Response<TokenVeiwModel>.Success(newToken, StatusCode.OK);
         }
-
-        public Task<Response<TokenVeiwModel>> CreateTokenByRefreshToken(string refreshToken)
+        public async Task<Response<CreateTokenByRefreshTokenViewModel>> CreateTokenByRefreshToken(CreateTokenByRefreshTokenRequestModel request)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<Response<TokenVeiwModel>> RevokeRefreshToken(string refreshToken)
-        {
-            throw new NotImplementedException();
+            var result = await _tokenDal.CreateTokenByRefreshToken(request);
+            return result;
         }
     }
 }

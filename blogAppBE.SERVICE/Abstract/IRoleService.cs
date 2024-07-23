@@ -7,5 +7,6 @@ namespace blogAppBE.SERVICE.Abstract
     public interface IRoleService
     {
         Task<Response<NoDataViewModel>> CreateRole(CreateRoleRequestModel request);
+        Task<Response<NoDataViewModel>> AssignRoleToUser(AssignRoleToUserRequestModel request);
     }
 }

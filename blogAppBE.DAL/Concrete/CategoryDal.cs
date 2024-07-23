@@ -3,7 +3,7 @@ using blogAppBE.CORE.DataAccess.EntityFramework;
 using blogAppBE.CORE.DBModels;
 using blogAppBE.CORE.Enums;
 using blogAppBE.CORE.Generics;
-using blogAppBE.CORE.RequestModels;
+using blogAppBE.CORE.RequestModels.Category;
 using blogAppBE.CORE.ViewModels;
 using blogAppBE.CORE.ViewModels.CategoryViewModels;
 using blogAppBE.DAL.Abstract;
@@ -95,6 +95,36 @@ namespace blogAppBE.DAL.Concrete
                 catch(Exception ex)
                 {
                     return Response<NoDataViewModel>.Fail("Something went wrong.Error: "+ex,StatusCode.InternalServerError);
+                }
+            }
+        }
+
+        public async Task<Response<NoDataViewModel>> UpdateCategory(CategoryRequestModel request)
+        {
+            using(var context = new AppDbContext())
+            {
+                try
+                {
+                    var isCategoryExistQuery = (from category in context.Categories
+                                           where category.Id == request.Id
+                                           select category);
+
+                    var isCategoryExist = await isCategoryExistQuery.FirstOrDefaultAsync();
+
+                    if(isCategoryExist == null)
+                    {
+                        return Response<NoDataViewModel>.Fail("There is no category matched given values.", StatusCode.NotFound);
+                    }
+
+                    isCategoryExist.Name = request.Name;
+                    await context.SaveChangesAsync();
+
+                    return Response<NoDataViewModel>.Success(StatusCode.OK);
+
+                }
+                catch(Exception ex)
+                {
+                    return Response<NoDataViewModel>.Fail("Something went wrong. Error: " + ex, StatusCode.InternalServerError);
                 }
             }
         }

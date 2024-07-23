@@ -1,10 +1,12 @@
 using blogAppBE.CORE.Enums;
 using blogAppBE.CORE.Generics;
 using blogAppBE.CORE.RequestModels;
+using blogAppBE.CORE.RequestModels.Category;
 using blogAppBE.CORE.ViewModels;
 using blogAppBE.CORE.ViewModels.CategoryViewModels;
 using blogAppBE.DAL.Abstract;
 using blogAppBE.SERVICE.Abstract;
+using Microsoft.VisualBasic;
 
 namespace blogAppBE.SERVICE.Concrete
 {
@@ -30,7 +32,8 @@ namespace blogAppBE.SERVICE.Concrete
 
         public async Task<Response<NoDataViewModel>> CreateCategory(CategoryRequestModel request)
         {
-            return await _categoryDal.Create(request);
+            var result = await _categoryDal.Create(request);
+            return result;
         }
 
         public async Task<Response<List<CategoryViewModel>>> GetCategoryListAsync()
@@ -42,6 +45,13 @@ namespace blogAppBE.SERVICE.Concrete
         public async Task<Response<NoDataViewModel>> DeleteCategory(int id)
         {
             var result = await _categoryDal.DeleteCategory(id);
+            return result;
+        }
+
+
+        public async Task<Response<NoDataViewModel>> UpdateCategory(CategoryRequestModel request)
+        {
+            var result = await _categoryDal.UpdateCategory(request);
             return result;
         }
     }

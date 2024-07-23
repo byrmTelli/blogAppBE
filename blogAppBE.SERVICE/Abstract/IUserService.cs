@@ -8,7 +8,7 @@ namespace blogAppBE.SERVICE.Abstract
     public interface IUserService
     {
         Task<Response<NoDataViewModel>> CreateUser(UserRegisterViewModel request);
-        Task<Response<AppUserViewModel>> UpdateUser(AppUserUpdateRequestModel request);
+        Task<Response<AppUserViewModel>> UpdateUser(string userId,AppUserUpdateRequestModel request);
 
     }
 }

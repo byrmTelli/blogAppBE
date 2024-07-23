@@ -24,5 +24,16 @@ namespace blogAppBE.WEB.Controllers
             }
             return StatusCode((int)response.StatusCode);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AssignRoleToUser([FromQuery]AssignRoleToUserRequestModel request)
+        {
+            var response = await _roleService.AssignRoleToUser(request);
+            if (!response.IsSuccessfull)
+            {
+                return StatusCode((int)response.StatusCode, response.Errors);
+            }
+            return StatusCode((int)response.StatusCode);
+        }
     }
 }

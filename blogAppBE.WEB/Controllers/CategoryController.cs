@@ -1,5 +1,6 @@
 using blogAppBE.CORE.Generics;
 using blogAppBE.CORE.RequestModels;
+using blogAppBE.CORE.RequestModels.Category;
 using blogAppBE.CORE.ViewModels;
 using blogAppBE.CORE.ViewModels.CategoryViewModels;
 using blogAppBE.SERVICE.Abstract;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace blogAppBE.WEB.Controllers
 {
+    [Authorize]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class CategoryController:ControllerBase
@@ -17,7 +19,6 @@ namespace blogAppBE.WEB.Controllers
         {
             _categoryService = categoryService;
         }
-
         [HttpPost]
         public async Task<IActionResult> Create(CategoryRequestModel request)
         {
@@ -31,8 +32,6 @@ namespace blogAppBE.WEB.Controllers
             return StatusCode((int)response.StatusCode,response.Errors);
 
         }
-        
-        
         [HttpGet("{categoryId}")]
         public async Task<IActionResult> GetCategoryById(int categoryId)
         {
@@ -44,8 +43,6 @@ namespace blogAppBE.WEB.Controllers
 
             return StatusCode((int)response.StatusCode,response.Errors);
         }
-
-        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetCategoryList()
         {
@@ -57,7 +54,6 @@ namespace blogAppBE.WEB.Controllers
 
             return StatusCode((int)response.StatusCode,response.Errors);
         }
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
@@ -68,6 +64,17 @@ namespace blogAppBE.WEB.Controllers
             }
 
             return StatusCode((int)response.StatusCode,response.Errors);
+        }
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategory(CategoryRequestModel request)
+        {
+            var response = await _categoryService.UpdateCategory(request);
+            if (response.IsSuccessfull)
+            {
+                return StatusCode((int)response.StatusCode, response.Data);
+            }
+
+            return StatusCode((int)response.StatusCode, response.Errors);
         }
 
     }

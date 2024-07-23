@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using blogAppBE.CORE.DataAccess.EntityFramework;
 using Microsoft.Extensions.Options;
 using blogAppBE.DAL.Context;
+using blogAppBE.CORE.Generics;
+using blogAppBE.CORE.RequestModels.Token;
+using blogAppBE.CORE.Enums;
 
 
 namespace blogAppBE.DAL.Concrete
@@ -57,7 +60,7 @@ namespace blogAppBE.DAL.Concrete
             if (isUserExist != null)
             {
                 var accessTokenExpiration = DateTime.UtcNow.AddMinutes(_tokenOptions.AccessTokenExpiration);
-                var refreshTokenExpiration = DateTime.UtcNow.AddMinutes(_tokenOptions.AccessTokenExpiration);
+                var refreshTokenExpiration = DateTime.UtcNow.AddMinutes(_tokenOptions.RefreshTokenExpiration);
                 var securityKey = SignInService.GetSymmetricSecurityKey(_tokenOptions.SecurityKey);
                 SigningCredentials signInCredential = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
@@ -92,7 +95,6 @@ namespace blogAppBE.DAL.Concrete
             }
             return new TokenVeiwModel { AccessToken = "", RefreshToken = "" };
         }
-
         //Getting users refresh token by user's id value
         public async Task<UserRefreshToken> GetRefreshToken(string userId)
         {
@@ -106,6 +108,50 @@ namespace blogAppBE.DAL.Concrete
                     var userRefreshToken = await tokenQuery.SingleOrDefaultAsync();
 
                     return userRefreshToken;
+            }
+        }
+
+        public async Task<Response<CreateTokenByRefreshTokenViewModel>> CreateTokenByRefreshToken(CreateTokenByRefreshTokenRequestModel request)
+        {
+            using(var context = new AppDbContext())
+            {
+                var dbRefreshTokenQuery = (from refreshToken in context.RefreshTokens
+                                           where refreshToken.Code == request.RefreshToken
+                                           select refreshToken);
+
+                var dbRefreshToken = await dbRefreshTokenQuery.FirstOrDefaultAsync();
+
+                if(dbRefreshToken.Expiration < DateTime.UtcNow)
+                {
+                    return Response<CreateTokenByRefreshTokenViewModel>.Fail("Expired refresh token",StatusCode.UnAuthorized);
+                }
+                var accessTokenExpiration = DateTime.UtcNow.AddSeconds(_tokenOptions.AccessTokenExpiration);
+
+                var isUserExist = await _userManager.FindByIdAsync(dbRefreshToken.UserId);
+
+                var securityKey = SignInService.GetSymmetricSecurityKey(_tokenOptions.SecurityKey);
+                SigningCredentials signInCredential = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
+
+
+                JwtSecurityToken jwtSecurityToken = new JwtSecurityToken(
+                    issuer: _tokenOptions.Issuer,
+                    expires: accessTokenExpiration,
+                    notBefore: DateTime.UtcNow,
+                    claims: await GetClaims(isUserExist, _tokenOptions.Audience),
+                    signingCredentials: signInCredential
+                    );
+
+                var handler = new JwtSecurityTokenHandler();
+
+
+                var token = handler.WriteToken(jwtSecurityToken);
+
+                var newAccessToken = new CreateTokenByRefreshTokenViewModel
+                {
+                    AccessToken = token
+                };
+
+                return Response<CreateTokenByRefreshTokenViewModel>.Success(newAccessToken, StatusCode.OK);
             }
         }
     }

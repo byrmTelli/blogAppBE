@@ -8,6 +8,6 @@ namespace blogAppBE.DAL.Abstract
     public interface IUserDal
     {
         Task<Response<NoDataViewModel>> CreateUser(UserRegisterViewModel request);
-        Task<Response<AppUserViewModel>> UpdateUser(AppUserUpdateRequestModel request);
+        Task<Response<AppUserViewModel>> UpdateUser(string userId,AppUserUpdateRequestModel request);
     }
 }

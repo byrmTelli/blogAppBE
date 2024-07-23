@@ -13,6 +13,13 @@ namespace blogAppBE.SERVICE.Concrete
         {
             _roleDal = roleDal;
         }
+
+        public async Task<Response<NoDataViewModel>> AssignRoleToUser(AssignRoleToUserRequestModel request)
+        {
+            var result = await _roleDal.AssingRoleToUser(request);
+            return result;
+        }
+
         public async Task<Response<NoDataViewModel>> CreateRole(CreateRoleRequestModel request)
         {
             var result = await _roleDal.CreateRole(request);

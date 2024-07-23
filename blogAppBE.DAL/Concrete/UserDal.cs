@@ -47,15 +47,15 @@ namespace blogAppBE.DAL.Concrete
             return Response<NoDataViewModel>.Success(StatusCode.Created);
         }
 
-        public async Task<Response<AppUserViewModel>> UpdateUser(AppUserUpdateRequestModel request)
+        public async Task<Response<AppUserViewModel>> UpdateUser(string userId,AppUserUpdateRequestModel request)
         {
-            var isUserExist = await _userManager.FindByEmailAsync(request.Email);
+            var isUserExist = await _userManager.FindByIdAsync(userId);
 
             if(isUserExist == null)
             {
                 return Response<AppUserViewModel>.Fail("There is no user matched given values.", StatusCode.NotFound);
             }
-
+            
             isUserExist.UserName = request.UserName;  
             isUserExist.PhoneNumber = request.PhoneNumber;
 

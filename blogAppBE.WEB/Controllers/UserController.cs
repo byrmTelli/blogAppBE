@@ -1,10 +1,13 @@
+using System.Security.Claims;
 using blogAppBE.CORE.Enums;
 using blogAppBE.CORE.RequestModels.User;
 using blogAppBE.SERVICE.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace blogAppBE.WEB.Controllers
-{
+{   
+    [Authorize]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserController:ControllerBase
@@ -15,6 +18,7 @@ namespace blogAppBE.WEB.Controllers
             _userService = userService;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] UserRegisterViewModel request)
         {
@@ -29,7 +33,8 @@ namespace blogAppBE.WEB.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateUser([FromBody] AppUserUpdateRequestModel request)
         {
-            var response = await _userService.UpdateUser(request);
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var response = await _userService.UpdateUser(currentUserId,request);
             if(response.IsSuccessfull)
             {
                 return StatusCode((int)response.StatusCode, response.Data);
