@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blogAppBE.CORE", "blogAppBE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blogAppBE.WEB", "blogAppBE.WEB\blogAppBE.WEB.csproj", "{CCD1BB39-F36E-42C7-83F0-35082F3F33D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blogAppBE.TEST", "blogAppBE.TEST\blogAppBE.TEST.csproj", "{B929956C-8DC7-4BE9-B36F-70A6E1630F02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CCD1BB39-F36E-42C7-83F0-35082F3F33D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD1BB39-F36E-42C7-83F0-35082F3F33D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD1BB39-F36E-42C7-83F0-35082F3F33D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B929956C-8DC7-4BE9-B36F-70A6E1630F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B929956C-8DC7-4BE9-B36F-70A6E1630F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B929956C-8DC7-4BE9-B36F-70A6E1630F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B929956C-8DC7-4BE9-B36F-70A6E1630F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

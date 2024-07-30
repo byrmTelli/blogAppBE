@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace blogAppBE.WEB.Controllers
 {   
-    [Authorize]
+    // [Authorize]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserController:ControllerBase
